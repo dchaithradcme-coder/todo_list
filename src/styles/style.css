@@ -1,0 +1,47 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 50px;
+  background-color: #e0f7fa; /* lighter background for contrast */
+  color: #333; /* darker text for readability */
+}
+
+input, button, select {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #4CAF50; /* stronger border for highlight */
+  background-color: #e8f5e9; /* subtle green tint */
+  color: #2e7d32; /* dark green text */
+  font-weight: bold;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* subtle shadow */
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px;
+  padding: 10px;
+  background-color: #fffde7; /* light yellow for highlight */
+  border: 2px solid #ffeb3b; /* yellow border */
+  border-radius: 5px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: bold;
+  color: #795548; /* brown text for contrast */
+}

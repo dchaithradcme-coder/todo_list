@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Entered Tasks</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      margin: 40px;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2e7d32;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    li {
+      background: #fffde7;
+      margin: 10px 0;
+      padding: 12px;
+      border-left: 6px solid #43a047;
+      border-radius: 6px;
+      font-weight: bold;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>📝 Entered Tasks</h1>
+  <ul id="taskList"></ul>
+
+  <script>
+    const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+    function renderTasks() {
+      const list = document.getElementById("taskList");
+      list.innerHTML = "";
+
+      if (!Array.isArray(tasks) || tasks.length === 0) {
+        const empty = document.createElement("li");
+        empty.textContent = "No tasks added yet.";
+        list.appendChild(empty);
+        return;
+      }
+
+      tasks.forEach(task => {
+        const li = document.createElement("li");
+        li.textContent = `${task.text} - ${task.date} ${task.time} [${task.repeat}] (${task.tags})`;
+        list.appendChild(li);
+      });
+    }
+
+    window.onload = renderTasks;
+  </script>
+</body>
+</html>

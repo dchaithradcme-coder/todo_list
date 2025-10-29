@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Task History</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 40px;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2e7d32;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    li {
+      background: #e0f2f1;
+      margin: 10px 0;
+      padding: 12px;
+      border-left: 6px solid #43a047;
+      border-radius: 6px;
+      font-weight: bold;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>🗂️ Deleted Task History</h1>
+  <ul id="historyList"></ul>
+
+  <script>
+    const history = JSON.parse(localStorage.getItem("history")) || [];
+
+    function renderHistory() {
+      const list = document.getElementById("historyList");
+      list.innerHTML = "";
+
+      if (history.length === 0) {
+        const empty = document.createElement("li");
+        empty.textContent = "No deleted tasks found.";
+        list.appendChild(empty);
+        return;
+      }
+
+      history.forEach(task => {
+        const li = document.createElement("li");
+        li.textContent = `${task.text} - ${task.date} ${task.time}`;
+        list.appendChild(li);
+      });
+    }
+
+    window.onload = renderHistory;
+  </script>
+</body>
+</html>

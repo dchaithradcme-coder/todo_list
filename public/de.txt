@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Smart Task Reminder</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e8f5e9;
+      margin: 40px;
+      color: #333;
+      text-align: center;
+    }
+
+    h1 {
+      color: #2e7d32;
+      margin-bottom: 20px;
+    }
+
+    nav a {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      background-color: #388e3c;
+    }
+  </style>
+</head>
+<body>
+  <h1>📝 Smart Task Reminder System</h1>
+  <p>Welcome Bhindu! Choose an option below:</p>
+
+  <nav>
+    <a href="tasks.html">Manage Tasks</a>
+    <a href="history.html">View Deleted Tasks</a>
+  </nav>
+</body>
+</html>
